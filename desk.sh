@@ -23,7 +23,7 @@ banner() {
 		${G}      |  | |__| |  | |   | |  \|
 
 	EOF
-	echo -e "${G}     A modded gui version of ubuntu for Termux\n"
+	echo -e "${G}     A GUI for Google cloud shell\n"
 }
 
 remote_setup() {
@@ -37,7 +37,7 @@ remote_setup() {
 
   # Install Chrome Remote Desktop
   wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-  sudo apt install ./chrome-remote-desktop_current_amd64.deb
+  sudo apt install ./chrome-remote-desktop_current_amd64.deb -y
   
 
   # Install Firefox
@@ -50,8 +50,8 @@ remote_setup() {
  # wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 #  sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
   #sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-  sudo apt update
-  sudo apt install -y code
+#  sudo apt update
+#  sudo apt install -y code
 
   # Clean up
   rm chrome-remote-desktop_current_amd64.deb 
@@ -63,20 +63,7 @@ note() {
 	echo -e " ${G} [-] Successfully Installed !\n"${W}
 	sleep 1
 	cat <<- EOF
-		 ${G}[-] Type ${C}vncstart${G} to run Vncserver.
-		 ${G}[-] Type ${C}vncstop${G} to stop Vncserver.
-
-		 ${C}Install VNC VIEWER Apk on your Device.
-
-		 ${C}Open VNC VIEWER & Click on + Button.
-
-		 ${C}Enter the Address localhost:1 & Name anything you like.
-
-		 ${C}Set the Picture Quality to High for better Quality.
-
-		 ${C}Click on Connect & Input the Password.
-
-		 ${C}Enjoy :D${W}
+		 succuseful
 	EOF
 }
 
