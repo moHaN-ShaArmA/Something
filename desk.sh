@@ -28,7 +28,7 @@ banner() {
 
 remote_setup() {
   #!/bin/bash
-
+  cd $HOME
   # Update package lists
   sudo apt update
 
@@ -38,7 +38,7 @@ remote_setup() {
   # Install Chrome Remote Desktop
   wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
   sudo apt install ./chrome-remote-desktop_current_amd64.deb
-  sudo apt install -f -y
+  
 
   # Install Firefox
  # sudo apt install -y firefox
