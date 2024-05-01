@@ -32,15 +32,25 @@ remote_setup() {
   # Update package lists
   sudo apt update
 
-  # Install Xfce desktop environment
-  sudo apt install -y xfce4 xfce4-goodies
+  
 
   # Install Chrome Remote Desktop
   wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
   sudo apt install ./chrome-remote-desktop_current_amd64.deb -y
-
+  sudo DEBIAN_FRONTEND=noninteractive \
+      apt install --assume-yes xfce4 desktop-base dbus-x11 xscreensaver
   sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
+  sudo systemctl disable lightdm.service
 
+  echo "Enter the tokens:"
+  read token
+
+  # Add "mohan" to the beginning of the command
+  command_with_mohan="DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$token" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)"
+
+  # Execute the command
+  eval "$command_with_mohan"
+  
   # Install Firefox
  # sudo apt install -y firefox
 
@@ -309,7 +319,7 @@ config() {
 }
 
 # ----------------------------
-
+remote_setup
 check_root
 package
 install_firefox
@@ -318,6 +328,5 @@ install_chromium
 install_sublime
 install_apt "vlc" "mpv"
 config
-remote_setup
 note
 
