@@ -37,7 +37,7 @@ remote_setup() {
 
   # Install Chrome Remote Desktop
   wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-  sudo dpkg -i chrome-remote-desktop_current_amd64.deb
+  sudo apt install ./chrome-remote-desktop_current_amd64.deb
   sudo apt install -f -y
 
   # Install Firefox
@@ -54,7 +54,7 @@ remote_setup() {
   sudo apt install -y code
 
   # Clean up
-  rm chrome-remote-desktop_current_amd64.deb packages.microsoft.gpg
+  rm chrome-remote-desktop_current_amd64.deb 
 
 }
 
