@@ -49,7 +49,7 @@ remote_setup() {
   command_with_mohan="DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$token" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)"
 
   # Execute the command
-  eval "$command_with_mohan"
+  $command_with_mohan
   
   # Install Firefox
  # sudo apt install -y firefox
