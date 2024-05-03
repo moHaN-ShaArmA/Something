@@ -1,0 +1,3 @@
+sudo apt install gdebi
+https://github.com/VSCodium/vscodium/releases/download/1.88.1.24104/codium_1.88.1.24104_arm64.deb
+https://github.com/VSCodium/vscodium/releases/download/1.88.1.24104/codium_1.88.1.24104_amd64.deb
