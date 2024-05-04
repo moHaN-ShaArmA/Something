@@ -319,7 +319,7 @@ config() {
 }
 
 # ----------------------------
-remote_setup
+#remote_setup
 check_root
 package
 install_firefox
